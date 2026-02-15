@@ -3,6 +3,8 @@ import cors from "cors"
 import authRoutes from "./routes/auth.routes"
 import categoryRoutes from "./routes/category.routes"
 import productRoutes from "./routes/product.routes"
+import banksRoutes from "./routes/bank.routes"
+import transactionRoutes from "./routes/transaction.routes"
 import { authenticate } from "./middleware/auth.middleware"
 import path from "path"
 
@@ -16,6 +18,8 @@ app.use("/uploads", express.static(path.join(__dirname,"../uploads")))
 app.use("/api/auth", authRoutes)
 app.use("/api/categories", categoryRoutes)
 app.use("/api/products", productRoutes)
+app.use("/api/banks", banksRoutes)
+app.use("/api/transactions", transactionRoutes)
 
 
 app.get("/", (req, res) => {
